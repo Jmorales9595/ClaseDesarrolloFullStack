@@ -1,0 +1,573 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: sans-serif;
+    padding: 90px 20px 0;
+}
+
+.header{
+    background-color: #1E1E2F ;
+    height: 80px;
+    position: fixed; /*con esto fijamos la posción y nuestra barra*/
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nav{
+    display: flex; 
+    justify-content: space-between;
+    /*La linea 22 y 23 no ayudan a que el Logo quede en la parte izquierda y los demas a lado derecho*/
+    max-width: 992px; /*ajustamos la pagina par adiferente pantallas es decir se centran los elementos*/
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+
+}
+
+.nav-menu {
+    display: flex; /*nos ayuda a colocar los ellementos de forma orizontal. */
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;/*convierte las letras en mayuscula.*/
+    width: max-content;
+}
+
+.nav-menu-link{
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active{/*Nos sombrea el texto al pasar el mouse*/
+    background-color: #034574;
+    transition: 0.5s;
+}
+
+.nav-toggle{
+    color:  hwb(240 96% 3%);
+    background: #ddd;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+
+    display: none;
+}
+
+.hero{
+     min-height: 100vh;
+     background-image: url(/imagen/imagen1.jpg);  
+     background-repeat: no-repeat;
+     background-size: cover;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.content{
+    text-align: center;
+    color: white;
+}
+
+.content h1{
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.content p{
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.content .btn{
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color:#61DAFB;
+    color: aliceblue;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.content .btn:hover{
+    background-color: #0056b3;
+
+}
+
+/*MOBILE*/
+@media (max-width: 768px){/*se hace media query para arreglar la forma para otros dispositivos*/
+    body {
+        padding-top: 70px;
+    }
+    
+    .header{
+        
+        height: 60px;
+        
+    }
+    
+    .logo {
+        font-size: 25px;
+        font-weight: bold;
+        padding: 0 20px;
+        line-height: 60px;
+    
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+        background-color: #2c3e50;
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);/*nos hace el metodo lupa para que el texto no se pierda*/
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+    
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,   /*en este comando nos ayuda a sombrear la letras cuando es un formato pequeño*/
+    .nav-menu-link_active{
+        background: none;
+        color: #83c5f7;
+    }
+    .nav-toggle{
+        display: block;
+    }
+
+    .nav-menu_visible{
+        left: 0;
+    }
+
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
+/*Codigo Andres Lote */
+/*Sección de Características o Servicios*/
+.services {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.service {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.service h3 {
+    margin-bottom: 15px;
+}
+
+.service p {
+    color: #555;
+}
+/*Sección Formulario de Contacto*/
+
+/** {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}*/
+
+.contact-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #61DAFB;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 20px;
+    }
+
+    button {
+        padding: 12px;
+    }
+}
+
+/*Codigo Monica*/
+
+.item{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+body{
+    font-family: "poppins", sans-serif;
+}
+
+.item{
+    background-color: #61DAFB;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    transition: background-color 5s;
+}
+
+.item:hover{
+    background-color: #1E1E2F ;
+    width: 400px;
+    border-radius: 50%;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.item:focus{
+    background-color: aqua;
+    width: 800px;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.animation{
+    display: flex;
+    justify-content: center;
+}
+
+.cuadrado {
+    width: 50px;
+    height: 50px;
+    background-color: #61DAFB;
+    position: relative;
+    animation: moverDerecha 4s infinite;
+}
+
+.cuadrado2 {
+    width: 50px;
+    height: 50px;
+    background-color: #61DAFB;
+    position: relative;
+    animation: moverIzquierda 4s infinite;
+}
+
+@keyframes moverDerecha {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 50%; /* Distancia hacia la derecha */
+    }
+}
+
+@keyframes moverIzquierda {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 50%; /* Distancia hacia la derecha */
+    }
+}
+
+
+
+/*Codigo Css Steven*/
+
+html, body, footer {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    text-decoration: none;
+    margin: 0;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Fondo principal: #1E1E2F (un tono de azul oscuro, elegante y moderno, ideal para fondos).
+Color de acento: #61DAFB (azul brillante relacionado con tecnologías modernas, como React, para botones o elementos interactivos).
+Texto principal: #FFFFFF (blanco, que contrasta bien con el fondo oscuro y mantiene la legibilidad).
+Elemento secundario o detalles: #FF6F61 (un tono coral que agrega un toque cálido y se puede usar para resaltar detalles o llamadas a la acción).
+*/
+
+.container-footer {
+    width: 100%;
+    background-color: #1E1E2F;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.container-footer__block {
+    padding-left: 15px;
+}
+
+.container-block__section1, .container-block__section2, .container-block__section3 {
+    padding-bottom: 25px;
+}
+
+.section1__name-page {
+    font-size: 2rem;
+    color: #888;
+    padding-bottom: 35px;
+}
+
+.section1__title, .section2__title {
+    color: #61DAFB;
+    font-size: 1rem;
+}
+
+.section1__address {
+    max-width: 100%;
+    padding: 0 15px;
+    overflow-wrap: break-word;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.section1__text, .derechos-autor__text {
+    font-size: 1rem;
+    font-style: normal;
+}
+
+.section1__item {
+    color: #888;
+    font-style: normal;
+}
+
+.item-one {
+    padding-bottom: 12px;
+}
+
+.section2__ul {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.section2__circule-icons {
+    height: 40px;
+    width: 40px;
+    background-color: #61DAFB;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.section2__icons {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.section3__title {
+    font-size: 20px;
+}
+
+.section3__input {
+    width: 80%;
+}
+
+
+/* container footer derechos de autor */
+
+.container-footer__derechos-autor {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.input-select {
+    margin-bottom: 20%;
+}
+
+/*
+.section2__circule-icons:hover {
+    background-color: blue;
+}
+*/
+
+/* media queries 600 px en adelante hasta 1024 px*/
+@media (min-width: 600px) {
+    .container-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container-footer__block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .container-block__section1,
+    .container-block__section2,
+    .container-block__section3 {
+        flex: 1;
+        margin-right: 15px;
+    }
+
+    .section3__input {
+        width: 60%;
+    }
+
+    .container-footer__derechos-autor {
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+/* media queries 1024 px*/
+
+@media (min-width: 1024px) {
+    .container-footer {
+        max-width: 100%;
+        margin: 0 auto; 
+        padding: 30px;
+    }
+
+    .container-footer__block {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .container-block__section1,
+    .container-block__section2,
+    .container-block__section3 {
+        flex: 1;
+        padding: 0 20px;
+    }
+
+    .section2__circule-icons {
+        height: 40px;
+        width: 40px;
+        background-color: #888;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .section2__circule-icons:hover {
+        background-color: #61DAFB;
+    }
+
+    .section3__input {
+        width: 50%;
+    }
+
+    .container-footer__derechos-autor {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+}
